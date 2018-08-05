@@ -14,7 +14,8 @@
         "sourceType": "module"
     },
     "plugins": [
-        "react"
+        "react",
+        "eslint-plugin-react"
     ],
     "rules": {
         "indent": [
@@ -32,6 +33,8 @@
         "semi": [
             "error",
             "always"
-        ]
+        ],
+        "no-unused-vars": "warn",
+        "react/jsx-uses-vars": 1
     }
 }
