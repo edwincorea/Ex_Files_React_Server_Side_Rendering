@@ -1,5 +1,4 @@
-import Index from "./index";
-import Document, { Head } from "next/document";
+import Document, { Head, Main, NextScript } from "next/document";
 
 export default class MyDocument extends Document {
     render() {
@@ -9,7 +8,8 @@ export default class MyDocument extends Document {
                     <link rel="stylesheet" href="/_next/static/style.css" />
                 </Head>
                 <body>
-                    <Index />
+                    <Main />
+                    <NextScript />
                 </body>
             </html>
         );
