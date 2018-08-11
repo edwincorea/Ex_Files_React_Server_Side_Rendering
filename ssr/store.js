@@ -8,7 +8,7 @@ const startState = {
     cards: []
 };
 
-// Actions
+// actions
 export const initialCards = () => {
     return {
         type: "INITIAL_CARDS",
@@ -23,10 +23,27 @@ export const addItem = (item) => {
     };
 };
 
+// reducers
+export const reducer = (state = startState, action) => {
+    switch (action.type) {
+    case "INITIAL_CARDS":
+        return {
+            cards: action.cards
+        };
+    case "ADD_ITEM":
+        return {
+            ...state,
+            cards: [...state.cards, action.item]
+
+        };
+    default:
+        return state;
+    }
+};
+
 // create store
 const thunkEnhancer = applyMiddleware(thunkMiddleware);
 const storeEnhancers = composeWithDevTools(thunkEnhancer);
-const reducer = () => ([]);
 export const initStore = (initialState = startState) => {
     return createStore(reducer, initialState, storeEnhancers);
 };
