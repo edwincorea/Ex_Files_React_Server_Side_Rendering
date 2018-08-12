@@ -1,5 +1,6 @@
 import Document, { Head, Main, NextScript } from "next/document";
 
+// https://github.com/zeit/next.js/#custom-document
 class MyDocument extends Document {
     render() {
         return (
