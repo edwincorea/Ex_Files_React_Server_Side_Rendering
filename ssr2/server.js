@@ -9,6 +9,17 @@ const handle = app.getRequestHandler();
 app.prepare()
     .then(() => {
         const server = express();
+
+        // just for example, explicitly create routes for page2 and ohyeah.
+        // next.js automatically did create routes for those pages...
+        server.get("/page2", (req, res) => {
+            return app.render(req, res, "/page2");
+        });
+
+        server.get("/page3", (req, res) => {
+            return app.render(req, res, "/ohyeah");
+        });
+
         
         server.get("*", (req, res) => {
             return handle(req, res);
