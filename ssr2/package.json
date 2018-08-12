@@ -9,6 +9,7 @@
   "author": "Edwin Corea",
   "license": "ISC",
   "dependencies": {
+    "@zeit/next-css": "^0.2.0",
     "express": "^4.16.3",
     "next": "^6.1.1",
     "react": "^16.4.2",
